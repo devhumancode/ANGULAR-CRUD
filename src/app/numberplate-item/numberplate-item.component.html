@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="numberplateInfo">
+        <div class="owner">
+            {{ numberplate.name }} {{ numberplate.surname }} 
+        </div>
+        <div class="plateInfo">
+            {{ numberplate.letters + " " + numberplate.numbers }}
+        </div>
+    </div>
+    <div class="options">
+        <!-- <button class="button edit" onclick="" (click)="onEdit(numberplate)">
+        </button> -->
+
+        <button class="button edit" onclick="openModal(numberplate.id)" (click)="openModal(numberplate.id)">
+        </button>
+
+        <button class="button" (click)="onDelete(numberplate)">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</div> 
+
+<div class="modal {{numberplate.id}}">
+    <form class="form card" (ngSubmit)="onSubmit(numberplate)">
+        <!-- NEW RECORD SECTION -->    
+        <h1>
+            Add new record
+        </h1>
+        <div class="fields">
+            <div class="half">
+                <div class="name">
+                    Name {{ numberplate.name}}
+                </div>
+                <div class="field">
+                    <input type="text" name="name" [(ngModel)]="name" minlength="3" value="{{numberplate.name}}" placeholder="{{numberplate.name}}">
+                </div>
+            </div>
+            <div class="half">
+                <div class="name">
+                    Surname
+                </div>
+                <div class="field">
+                    <input type="text" name="surname" [value]="numberplate.name" [(ngModel)]="surname" minlength="3">
+                </div>
+            </div>
+        </div>
+    
+        <div class="fields">
+            <div class="half">
+                <div class="name">
+                    Plate letters
+                </div>
+                <div class="field">
+                    <input type="text" name="letters" [(ngModel)]="letters" pattern="[A-Za-z]{3}" minlength="3" maxlength="3">
+                </div>
+            </div>
+            <div class="half">
+                <div class="name">
+                    Plate numbers
+                </div>
+                <div class="field">
+                    <input type="number" name="numbers" [(ngModel)]="numbers" max="999">
+                </div>
+            </div>        
+        </div>
+        <div class="fields">
+            <input type="submit" value="CHANGE">
+        </div>
+        <br/>
+    </form>
+</div>
