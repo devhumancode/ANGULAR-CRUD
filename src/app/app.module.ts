@@ -13,13 +13,17 @@ import { FormComponent } from './components/form/form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { UserModalComponent } from './components/user-modal/user-modal.component';
+import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
+import { MatAutocompleteHarness } from '@angular/material/autocomplete/testing';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     FormComponent,
-    UserModalComponent
+    UserModalComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -32,10 +36,11 @@ import { UserModalComponent } from './components/user-modal/user-modal.component
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule
   ],
-  providers: [],
+  providers: [MatAutocompleteHarness],
   bootstrap: [AppComponent],
-  entryComponents: [UserModalComponent]
+  entryComponents: [UserModalComponent, DeleteModalComponent]
 })
 export class AppModule { }

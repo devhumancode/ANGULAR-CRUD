@@ -11,5 +11,5 @@
     <input matInput placeholder="Number Plate" formControlName="numberPlate">
   </mat-form-field>
 
-  <button *ngIf="!modalMode" mat-button color="primary" (click)="addNumberplate()">Add</button>
+  <button *ngIf="!modalMode" mat-button color="primary" (click)="addNumberplate.emit()">Add</button>
 </form>

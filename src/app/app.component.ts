@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NumberPlate } from './models/model';
 import { NumberplatesService } from './services/numberplates.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -6,6 +6,8 @@ import { UserModalComponent } from './components/user-modal/user-modal.component
 import { FormGroup } from '@angular/forms';
 import { FormService } from './components/form/services/form.service';
 import { FormValidatorService } from './components/form/services/form-validation.service';
+import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
+import { TableComponent } from './components/table/table.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,8 @@ export class AppComponent implements OnInit {
     private dialog: MatDialog,
     private numberplateService: NumberplatesService
   ) { }
+
+  @ViewChild(TableComponent) table;
 
   ngOnInit(): void {
     this.numberplateService.getNumberplates().subscribe(numberplates => (this.numberPlates = numberplates));
@@ -45,15 +49,32 @@ export class AppComponent implements OnInit {
       // TODO: Do action after dialog close
       if (data && data.value){
         this.numberplateService.amendNumberplate(numberPlate.id, data.value).subscribe();
+        this.numberplateService.getNumberplates().subscribe();
       }
     });
   }
 
   // Executed when Delete button is pressed
   onDelete(numberPlate: NumberPlate): void {
-  // Remove from UI
-   this.numberPlates = this.numberPlates.filter(t => t.id !== numberPlate.id);
-  // Remove from Server
-   this.numberplateService.deleteNumberplate(numberPlate).subscribe();
+    const dialogRef = this.dialog.open(DeleteModalComponent, {
+      disableClose: false
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      // TODO: Do action after dialog close
+      if (data && data.value === 'yes'){
+        // Remove from UI
+      this.numberPlates = this.numberPlates.filter(t => t.id !== numberPlate.id);
+      // Remove from Server
+      this.numberplateService.deleteNumberplate(numberPlate).subscribe();
+      }
+    });
+  }
+
+  addNumberplate(): void {
+    this.numberplateService.addNumberplate(this.numberPlateForm.value).subscribe();
+    setTimeout(() => {
+      this.numberplateService.getNumberplates().subscribe();
+    }, 1000);
   }
 }

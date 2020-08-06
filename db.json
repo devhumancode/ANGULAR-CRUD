@@ -1,7 +1,7 @@
 {
   "numberplates": [
     {
-      "name": "Evaldas",
+      "name": "Tomukas",
       "surname": "Rulit",
       "numberPlate": "DAB 919",
       "id": 8
@@ -13,10 +13,40 @@
       "id": 9
     },
     {
-      "name": "Evaldas",
-      "surname": "Rulit",
-      "numberPlate": "DAB 919",
+      "name": "BASBDAS",
+      "surname": "asdasd",
+      "numberPlate": "asdasd",
       "id": 10
+    },
+    {
+      "name": "KAMILE",
+      "surname": "BEZDA",
+      "numberPlate": "PRST 999",
+      "id": 11
+    },
+    {
+      "name": "NAUJAS ",
+      "surname": "IRASAS",
+      "numberPlate": "MAN 123",
+      "id": 12
+    },
+    {
+      "name": "NAUJAS ",
+      "surname": "IRASAS",
+      "numberPlate": "MAN 123",
+      "id": 13
+    },
+    {
+      "name": "asdas",
+      "surname": "asdasd",
+      "numberPlate": "asd123123",
+      "id": 14
+    },
+    {
+      "name": "asdasdasd",
+      "surname": "asdasd",
+      "numberPlate": "asdasdasd",
+      "id": 15
     }
   ]
 }
