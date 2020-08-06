@@ -1,52 +1,58 @@
 {
   "numberplates": [
     {
-      "name": "Tomukas",
-      "surname": "Rulit",
-      "numberPlate": "DAB 919",
-      "id": 8
+      "name": "Tomas",
+      "surname": "Adomavicius",
+      "numberPlate": "DAB919",
+      "id": 1
+    },
+    {
+      "name": "Rokas",
+      "surname": "Jonius",
+      "numberPlate": "TEL123",
+      "id": 2
     },
     {
       "name": "Evaldas",
-      "surname": "Rulit",
-      "numberPlate": "DAB 919",
+      "surname": "Darantavicius",
+      "numberPlate": "NAR314",
+      "id": 3
+    },
+    {
+      "name": "Kamile",
+      "surname": "Urbanovic",
+      "numberPlate": "MEN947",
+      "id": 4
+    },
+    {
+      "name": "Tomas ",
+      "surname": "Pilius",
+      "numberPlate": "BOL749",
+      "id": 5
+    },
+    {
+      "name": "Donatas",
+      "surname": "Stonys",
+      "numberPlate": " RPO395",
+      "id": 6
+    },
+    {
+      "name": "Rusne",
+      "surname": "Donyte",
+      "numberPlate": "ATO858",
+      "id": 7
+    },
+    {
+      "name": "Rokas",
+      "surname": "Rokinis",
+      "numberPlate": "OEP185",
+      "id": 8
+    },
+    {
+      "name": "Ponas",
+      "surname": "Bynas",
+      "numberPlate": "ASD121",
       "id": 9
-    },
-    {
-      "name": "BASBDAS",
-      "surname": "asdasd",
-      "numberPlate": "asdasd",
-      "id": 10
-    },
-    {
-      "name": "KAMILE",
-      "surname": "BEZDA",
-      "numberPlate": "PRST 999",
-      "id": 11
-    },
-    {
-      "name": "NAUJAS ",
-      "surname": "IRASAS",
-      "numberPlate": "MAN 123",
-      "id": 12
-    },
-    {
-      "name": "NAUJAS ",
-      "surname": "IRASAS",
-      "numberPlate": "MAN 123",
-      "id": 13
-    },
-    {
-      "name": "asdas",
-      "surname": "asdasd",
-      "numberPlate": "asd123123",
-      "id": 14
-    },
-    {
-      "name": "asdasdasd",
-      "surname": "asdasd",
-      "numberPlate": "asdasdasd",
-      "id": 15
     }
   ]
 }

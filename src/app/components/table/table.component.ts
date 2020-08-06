@@ -9,23 +9,23 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   @Input()
   set data(data: NumberPlate[]) {
+    if (data){
     this.dataSource = new MatTableDataSource<NumberPlate>(
       data.sort((a, b) => a.name.localeCompare(b.name))
-      );
+    );
+    this.dataSource.paginator = this.paginator;
+    }
   }
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   @Output() edit = new EventEmitter<NumberPlate>();
   @Output() delete = new EventEmitter<NumberPlate>();
   public dataSource: MatTableDataSource<NumberPlate>;
   public displayedColumns: string[] = ['name', 'surname', 'number', 'options'];
 
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-  }
 
   // tslint:disable-next-line: typedef
   applyFilter(event: Event) {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormValidatorService } from './form-validation.service';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class FormService {
     this.form = this.fb.group({
       name: [null],
       surname: [null],
-      numberPlate: [null]
+      numberPlate: [null, Validators.pattern(`^[A-Z]{3}[0-9]{3}`)]
     });
   }
 

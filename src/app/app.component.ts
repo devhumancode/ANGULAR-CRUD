@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
       // TODO: Do action after dialog close
       if (data && data.value){
         this.numberplateService.amendNumberplate(numberPlate.id, data.value).subscribe();
-        this.numberplateService.getNumberplates().subscribe();
+        window.location.reload();
       }
     });
   }
@@ -72,9 +72,15 @@ export class AppComponent implements OnInit {
   }
 
   addNumberplate(): void {
-    this.numberplateService.addNumberplate(this.numberPlateForm.value).subscribe();
-    setTimeout(() => {
-      this.numberplateService.getNumberplates().subscribe();
-    }, 1000);
+    // Check if numberplate already exists
+    const toCheck = this.numberPlates.some(data => data.numberPlate === this.numberPlateForm.value.numberPlate);
+
+    if (!toCheck){
+      this.numberplateService.addNumberplate(this.numberPlateForm.value).subscribe();
+      window.location.reload();
+    }
+    else {
+      alert ('This numberplate already exists!');
+    }
   }
 }

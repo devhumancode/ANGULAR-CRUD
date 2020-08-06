@@ -1,15 +1,16 @@
 <form [formGroup]="group" class="card">
   <mat-form-field>
-    <input matInput placeholder="Name" formControlName="name">
+    <input matInput placeholder="Name" formControlName="name" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Surname" formControlName="surname">
+    <input matInput placeholder="Surname" formControlName="surname" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Number Plate" formControlName="numberPlate">
+    <input matInput placeholder="Number Plate" formControlName="numberPlate" required>
+    <mat-error>You've entered incorrect numberplate</mat-error>
   </mat-form-field>
 
-  <button *ngIf="!modalMode" mat-button color="primary" (click)="addNumberplate.emit()">Add</button>
+  <button *ngIf="!modalMode" mat-button color="primary" [ngClass]="{ disabled: group.invalid }" (click)="addNumberplate.emit()">Add</button>
 </form>

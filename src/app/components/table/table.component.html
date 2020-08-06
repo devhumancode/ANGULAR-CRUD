@@ -1,6 +1,6 @@
 <mat-form-field class="searchbar">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  <mat-label>Filter results</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Search for numberplate" #input>
 </mat-form-field>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

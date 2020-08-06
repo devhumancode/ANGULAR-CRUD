@@ -59,13 +59,25 @@ body {
     .mat-dialog-title {
         color: #444;
         letter-spacing: 1px;
-        width: 50%;
+        width: 60%;
         margin: auto;
+
+        @include tablet {
+            width: 100%;
+            padding: 20px 24px;
+            box-sizing: border-box;
+        }
     }
 
     .mat-dialog-actions {
-        width: 50%;
+        width: 60%;
         margin: auto; 
+
+        @include tablet {
+            width: 100%;
+            padding: 0 24px;
+            box-sizing: border-box;
+        }
     }
     
     .cdk-overlay-dark-backdrop {
@@ -97,5 +109,5 @@ body {
                 inset 7px 7px 20px 0px #0003,
                 inset 4px 4px 5px 0px #0001;
         }
-    }    
+    } 
 }

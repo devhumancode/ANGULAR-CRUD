@@ -1,22 +1,30 @@
 @import '../../../mixins.scss';
 
-table, .mat-paginator {
+table {
   width: calc(50% + 6em);
-  max-width: calc(600px +6em);
+  max-width: calc(600px + 6em);
   margin: auto;
   transition: 0.6s;
-    box-shadow: -7px -7px 20px 0px #fff9,
-                -4px -4px 5px 0px #fff9,
-                7px 7px 20px 0px #0002,
-                4px 4px 5px 0px #0001,
-                inset 0px 0px 0px 0px #fff9,
-                inset 0px 0px 0px 0px #0001,
-                inset 0px 0px 0px 0px #fff9,
-                inset 0px 0px 0px 0px #0001;
-    background-color: #eeeeee;
+  box-shadow: -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+  background-color: #eeeeee;
 
   @include tablet {
     width: 90%;
+  }
+
+  @include mobile {
+    width: 100%;
+
+    .mat-cell {
+      font-size: 0.6em;
+    }
   }
 }
 
@@ -26,6 +34,10 @@ a {
 
 .mat-focus-indicator.mat-button.mat-button-base {
   transform: scale(0.8);
+
+  @include mobile {
+    transform: scale(0.6);
+  }
 }
 
 .mat-header-cell {
@@ -33,10 +45,37 @@ a {
 }
 
 .searchbar {
-  width: 50%;
-  margin: 0% 25%;
+  width: 30%;
+  margin: 0% 35%;
+
+  @include tablet {
+    width: 90%;
+    margin: 0 5%;
+  }
 }
 
 th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
   text-align: right;
+}
+
+.mat-paginator {
+  width: calc(50% + 8em);
+  max-width: calc(600px + 8em);
+  margin: auto;
+  box-shadow: -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+
+  @include tablet {
+    width: 90%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }

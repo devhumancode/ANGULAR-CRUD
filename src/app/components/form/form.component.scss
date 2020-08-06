@@ -12,7 +12,7 @@
   padding: 1em 3em;
   margin: 1em auto;
   width: 50%;
-  max-width: calc(600px-6em);
+  max-width: calc(600px - 0em);
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
   background-color:#eeeeee !important;
@@ -30,6 +30,10 @@
   @include tablet {
     width: calc(90% - 6em);
   }
+
+  @include mobile {
+    width: calc(100% - 6em);
+  }
 }
 
 .card {
@@ -37,7 +41,20 @@
   flex-wrap: wrap !important;
   flex-direction: row !important;
   justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column !important;
+  }
   .mat-form-field {
     width: 45%;
+
+    @include mobile {
+      width: 80%; 
+    }
   }
+}
+
+.disabled { 
+  pointer-events: none;
+  color: rgb(136, 132, 132) !important;
 }
