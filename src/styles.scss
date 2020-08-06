@@ -1,4 +1,26 @@
-//Global styling
+// Material styling
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Mixins 
+@import 'mixins.scss';
+
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+    $padding: unquote(($y / $x) * 100 + '%');
+  
+    @if $pseudo {
+      &:before {
+        @include pseudo($pos: relative);
+        width: 100%;
+        padding-top: $padding;
+      }
+    }
+  
+    @else {
+      padding-top: $padding;
+    }
+}
+
+// Global styling
 @font-face {
     font-family: 'Probolinggo';
     src: url('./assets/Probolinggo/Probolinggo.eot?#iefix') format('embedded-opentype'),  url('./assets/Probolinggo/Probolinggo.woff') format('woff'), url('./assets/Probolinggo/Probolinggo.ttf')  format('truetype'), url('./assets/Probolinggo/Probolinggo.svg#Probolinggo') format('svg');
@@ -14,28 +36,46 @@
     font-style: normal;
 }
 
-  
 body {
-    font-family: Probolinggo;
     background: #eeeeee;
-    letter-spacing: 1px;
 
     .kalos {
         font-family: KalosSans-Book;
     }
 
-    .card {
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        flex-direction:row;
-        padding: 1em 3em;
-        margin: 1em auto;
+    .probolinggo {
+        font-family: Probolinggo;
+    }
+
+    .mat-dialog-container {
+        background: transparent;
+        box-shadow: unset;
+    }
+    
+    .mat-dialog-content {
+        overflow: visible !important;
+    }
+    
+    .mat-dialog-title {
+        color: #444;
+        letter-spacing: 1px;
         width: 50%;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        -webkit-tap-highlight-color: transparent;
-        background-color:#eeeeee;
-        border-radius:10px;
+        margin: auto;
+    }
+
+    .mat-dialog-actions {
+        width: 50%;
+        margin: auto; 
+    }
+    
+    .cdk-overlay-dark-backdrop {
+        background: #eeeeee;
+    }
+    .mat-button.delete {
+        color: #ff5555 !important;
+    }
+    .mat-focus-indicator.mat-button.mat-button-base{
+        transition: 0.6s;
         box-shadow: -7px -7px 20px 0px #fff9,
                     -4px -4px 5px 0px #fff9,
                     7px 7px 20px 0px #0002,
@@ -44,49 +84,18 @@ body {
                     inset 0px 0px 0px 0px #0001,
                     inset 0px 0px 0px 0px #fff9,
                     inset 0px 0px 0px 0px #0001;
-        transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+        background-color: #eeeeee;
+        color: #49b53f;
     
-        .numberplateInfo {
-            line-height: 1.4em;
-            .owner {
-                font-size: 1.4em;
-                font-family: KalosSans-Book;
-                color: rgb(146, 34, 34);
-            }
-    
-            .plateInfo {
-                font-size: 1.6em;
-            }
+        &:hover {
+            box-shadow: 0px 0px 0px 0px #fff9,
+                0px 0px 0px 0px #fff9,
+                0px 0px 0px 0px #0001,
+                0px 0px 0px 0px #0001,
+                inset -7px -7px 20px 0px #fff9,
+                inset -4px -4px 5px 0px #fff9,
+                inset 7px 7px 20px 0px #0003,
+                inset 4px 4px 5px 0px #0001;
         }
-    }
-
-    input[type=text], input[type=number], input[type=submit]{
-        box-shadow: 0px 0px 0px 0px #fff9,
-            0px 0px 0px 0px #fff9,
-            0px 0px 0px 0px #0001,
-            0px 0px 0px 0px #0001,
-            inset -7px -7px 20px 0px #fff9,
-            inset -4px -4px 5px 0px #fff9,
-            inset 7px 7px 20px 0px #0003,
-            inset 4px 4px 5px 0px #0001;
-        border: unset;
-        border-radius: 25px;
-        padding: 0.25em 1.5em;
-        font-family: KalosSans-Book;
-        transition: 0.6s;
-
-        &:focus, &:hover {
-            outline:0;
-            //transform: scale(1.1);
-            background: #eeeeee;
-            box-shadow: -7px -7px 20px 0px #fff9,
-                    -4px -4px 5px 0px #fff9,
-                    7px 7px 20px 0px #0002,
-                    4px 4px 5px 0px #0001,
-                    inset 0px 0px 0px 0px #fff9,
-                    inset 0px 0px 0px 0px #0001,
-                    inset 0px 0px 0px 0px #fff9,
-                    inset 0px 0px 0px 0px #0001;
-        }
-    }
+    }    
 }

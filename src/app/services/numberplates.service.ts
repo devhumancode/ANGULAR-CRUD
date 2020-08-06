@@ -1,45 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Numberplate } from '../models/Numberplate';
+import { NumberPlate } from '../models/model';
 
 const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type' : 'application/json'
-  })
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+};
+
+enum URL {
+  name = 'http://localhost:3000/numberplates'
 }
+
 @Injectable({
   providedIn: 'root'
 })
 export class NumberplatesService {
-  numberplatesUrl:string =  "http://localhost:3000/numberplates";
-  constructor(private http:HttpClient) { }
+  private numberplatesUrl = URL.name;
 
-  //Get numberplate details from server
-  getNumberplates():Observable<Numberplate[]> {
-    return this.http.get<Numberplate[]>(this.numberplatesUrl);
+  constructor(private http: HttpClient) { }
+
+  // Get numberplate details from server
+  getNumberplates(): Observable<NumberPlate[]> {
+    return this.http.get<NumberPlate[]>(this.numberplatesUrl);
   }
 
-  //Change numberplate details on server
-  changeDetails(numberplate:Numberplate):Observable<any> {
-    const url = `${this.numberplatesUrl}/${numberplate.id}`    
+  // Change numberplate details on server
+  changeDetails(numberplate: NumberPlate): Observable<any> {
+    const url = `${this.numberplatesUrl}/${numberplate.id}`;
     return this.http.put(url, numberplate, httpOptions);
   }
 
-  //Delete numberplate from server
-  deleteNumberplate(numberplate:Numberplate):Observable<Numberplate> {
-    const url = `${this.numberplatesUrl}/${numberplate.id}`   
-    return this.http.delete<Numberplate>(url, httpOptions);
+  // Delete numberplate from server
+  deleteNumberplate(numberplate: NumberPlate): Observable<NumberPlate> {
+    const url = `${this.numberplatesUrl}/${numberplate.id}`;
+    return this.http.delete<NumberPlate>(url, httpOptions);
   }
 
-  //Add new numberplate 
-  addNumberplate(numberplate:Numberplate):Observable<Numberplate> {
-    return this.http.post<Numberplate>(this.numberplatesUrl, numberplate, httpOptions);
+  // Add new numberplate
+  addNumberplate(numberplate: NumberPlate): Observable<NumberPlate> {
+    return this.http.post<NumberPlate>(this.numberplatesUrl, numberplate, httpOptions);
   }
 
-  //Edit existing numberplate
-  amendNumberplate(numberplate:Numberplate):Observable<any> {
-    const url = `${this.numberplatesUrl}/${numberplate.id}`
+  // Edit existing numberplate
+  amendNumberplate(
+    id: number,
+    numberplate: NumberPlate): Observable<any> {
+    const url = `${this.numberplatesUrl}/${id}`;
     return this.http.put(url, numberplate, httpOptions);
   }
 }

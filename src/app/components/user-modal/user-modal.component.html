@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Edit numberplate details</h1>
+<div mat-dialog-content>
+  <app-form 
+    [modalMode]="true"
+    [group]="numberPlateForm"
+  >
+  </app-form>
+</div>
+<div mat-dialog-actions>
+  <button class="confirm" mat-button (click)="onSubmit()">Save</button>
+  <button class="cancel" mat-button class="delete" (click)="onCancel()">Cancel</button>
+</div>

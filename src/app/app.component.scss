@@ -25,9 +25,15 @@
         padding: 0 2em;
         text-align: center;
         font-size: 2em;
+        
 
         &.kalos {
             font-size: 1.4em;
+        }
+
+        &.probolinggo {
+            color: #3f51b5;
+            font-size: 2em;
         }
     }
 }

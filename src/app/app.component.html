@@ -1,18 +1,24 @@
-<div class="mainWrapper">
-
-  <div class="header">
-    <img src="../assets/img/hcSmall.png">
-  </div>
-
-  <div class="topContent">
-    <h1 class="kalos">
-      Welcome to 
-    </h1>
-    <h1>
-      REGISTRITA
-    </h1>
-  </div>
-
-  <app-numberplate></app-numberplate>
-
+<div class="header">
+  <img src="../assets/img/hcSmall.png">
 </div>
+
+<div class="topContent">
+  <h1 class="kalos">
+    Welcome to 
+  </h1>
+  <h1 class="probolinggo">
+    REGISTRITA
+  </h1>
+</div>
+
+<app-form 
+  [group]="numberPlateForm"
+>
+</app-form>
+
+<app-table 
+  [data]="numberPlates"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)"
+>
+</app-table>

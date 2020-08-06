@@ -1,28 +1,22 @@
 {
   "numberplates": [
     {
-      "name": "Kamile",
-      "surname": "Balciauskaite",
-      "letters": "HOT",
-      "numbers": 696,
+      "name": "Evaldas",
+      "surname": "Rulit",
+      "numberPlate": "DAB 919",
       "id": 8
     },
     {
-      "name": "Kamile",
-      "surname": "Balciauskaite",
-      "letters": "HOT",
-      "numbers": 696,
+      "name": "Evaldas",
+      "surname": "Rulit",
+      "numberPlate": "DAB 919",
       "id": 9
     },
     {
+      "name": "Evaldas",
+      "surname": "Rulit",
+      "numberPlate": "DAB 919",
       "id": 10
-    },
-    {
-      "name": "Kamile",
-      "surname": "Balciauskaite",
-      "letters": "HOT",
-      "numbers": 696,
-      "id": 11
     }
   ]
 }
