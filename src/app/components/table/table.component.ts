@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { NumberPlate } from '../../models/model';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
@@ -16,6 +15,7 @@ export class TableComponent {
     this.dataSource = new MatTableDataSource<NumberPlate>(
       data.sort((a, b) => a.name.localeCompare(b.name))
     );
+    // Connecting table data to paginator
     this.dataSource.paginator = this.paginator;
     }
   }

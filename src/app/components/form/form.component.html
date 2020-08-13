@@ -1,10 +1,12 @@
 <form [formGroup]="group" class="card">
   <mat-form-field>
     <input matInput placeholder="Name" formControlName="name" required>
+    <mat-error>Name is required</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <input matInput placeholder="Surname" formControlName="surname" required>
+    <mat-error>Surname is required</mat-error>
   </mat-form-field>
 
   <mat-form-field>
